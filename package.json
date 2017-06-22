@@ -1,0 +1,26 @@
+{
+  "name": "kimkellydogtraining",
+  "version": "1.0.0",
+  "description": "Marketing website for Kim Kelly Dog Training",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/construktivist/KimKellyDogs.git"
+  },
+  "author": "Keegan Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/construktivist/KimKellyDogs/issues"
+  },
+  "homepage": "https://github.com/construktivist/KimKellyDogs#readme"
+}
