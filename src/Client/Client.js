@@ -1,6 +1,6 @@
 //Model for the Clients that are submitted by Contact form and managed by Admin.
 
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
 var Schema = mongoose.Schema;
 
@@ -49,7 +49,7 @@ var ClientSchema = new Schema({
   clientGroup: {
     type: String
   }
-  
+
 });
 
 
