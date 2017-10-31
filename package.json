@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Marketing website for Kim Kelly Dog Training",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack -w"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "express": "^4.15.5",
@@ -29,10 +34,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "webpack": "^3.6.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
   },
   "repository": {
     "type": "git",

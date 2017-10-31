@@ -2,8 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 
-const client_controller = require("./src/Client/client_controller")
-
+//App controllers
+// const admin_controller = require("./src/admin/admin_controller")
+const client_controller = require("./src/client/client_controller")
+// const testimonial_controller = require("./src/testimonial/testimonial_controller")
 
 //Server config
 const app = express();
@@ -13,7 +15,9 @@ const PORT = process.env.PORT || 3000;
 app.set("views", path.join(__dirname, "views"));
 
 //Route controllers
+// app.use("/admin", admin_controller)
 app.use("/client", client_controller)
+// app.use("/testimonial", testimonial_controller)
 
 //Database config
 mongoose.connect(/*NEED TO ADD REMOTE ENV HERE*/ "mongodb://localhost/kimkellydogs_db");
