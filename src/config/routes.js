@@ -1,13 +1,12 @@
 import React from "react"
-import { Router, Route, browserHistory, IndexRoute } from "react-router"
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import Main from "../main/components/Main"
 import Admin from "../admin/components/Admin"
 
 
 module.exports = (
-  <Router history = {browserHistory}>
-    <Route path="/" component={Main}>
-    </Route>
+  <Router>
+    <Route path="/" component={Main} />
   </Router>
 );

@@ -7,11 +7,11 @@ import store from "./store"
 
 import Main from "./main/components/Main"
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     {routes}
-//   </Provider>,
-//   document.getElementById("app")
-// );
+ReactDOM.render(
+   <Provider store={store}>
+     {routes}
+   </Provider>,
+   document.getElementById("app")
+);
 
-ReactDOM.render(<Main />, document.getElementById('app'))
+// ReactDOM.render(<Main />, document.getElementById('app'))
