@@ -7,6 +7,9 @@ import Admin from "../admin/components/Admin"
 
 module.exports = (
   <Router>
-    <Route path="/" component={Main} />
+    <div>
+      <Route exact path="/" component={Main} />
+      <Route path="/admin" component={Admin} />
+    </div>
   </Router>
 );
