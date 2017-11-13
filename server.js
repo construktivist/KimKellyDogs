@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+require ('dotenv').config();
 
 //App controllers
 // const admin_controller = require("./src/admin/admin_controller")
-//const client_controller = require("./src/client/client_controller")
+const client_controller = require("./src/client/client_controller")
 // const testimonial_controller = require("./src/testimonial/testimonial_controller")
 
 //Server config
@@ -16,7 +17,7 @@ app.set("views", path.join(__dirname, "views"));
 
 //Route controllers
 // app.use("/admin", admin_controller)
-//app.use("/client", client_controller)
+app.use("/client", client_controller)
 // app.use("/testimonial", testimonial_controller)
 
 //Database config
