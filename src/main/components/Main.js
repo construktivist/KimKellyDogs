@@ -1,19 +1,38 @@
-import React from 'react'
-import { Container } from 'react-grid-system'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-
-injectTapEventPlugin();
+import React from "react"
+import { Link } from "react-router-dom"
+//import { login, logout, isLoggedIn } from '../../utils/AuthService';
 
 export default class Main extends React.Component {
 
   render() {
     return (
-      <MuiThemeProvider>
-        <Container>
-          <h2>Main</h2>
-        </Container>
-      </MuiThemeProvider>
+      <div className="container">
+        {/* <nav className="navbar navbar-default">
+        <div className="navbar-header">
+          <Link className="navbar-brand" to="/">Main</Link>
+        </div>
+        <ul className="nav navbar-nav">
+          <li>
+            <Link to="/">Main</Link>
+          </li>
+          <li>
+            {
+             ( isLoggedIn() ) ? <Link to="/admin">Admin</Link> :  ''
+            }
+
+          </li>
+        </ul>
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+           {
+             (isLoggedIn()) ? ( <button className="btn btn-danger log" onClick={() => logout()}>Log out </button> ) : ( <button className="btn btn-info log" onClick={() => login()}>Log In</button> )
+           }
+          </li>
+        </ul>
+      </nav> */}
+      <h2>Main</h2>
+    </div>
+
     );
   }
 }
