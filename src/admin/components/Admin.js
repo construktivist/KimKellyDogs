@@ -1,7 +1,11 @@
 import React from 'react'
-// import { isLoggedIn } from '../../utils/AuthService'
+import Auth from "../../utils/Auth.js"
+
+// const auth = new Auth();
+// auth.login();
 
 export default class Admin extends React.Component {
+
 
   render() {
     return (
