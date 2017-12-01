@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-require ('dotenv').config();
 
 //App controllers
 // const admin_controller = require("./src/admin/admin_controller")

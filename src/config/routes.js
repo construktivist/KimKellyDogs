@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Main from "../main/components/Main"
 import Admin from "../admin/components/Admin"
 
+
 const App = () =>(
   <Switch>
     <Route exact path="/" component={Main} />
