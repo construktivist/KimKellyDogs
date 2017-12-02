@@ -1,6 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const jwt = require("express-jwt");
+const jwks = require("jwks-rsa");
+
+//auth0 jwtCheck
+const jwtCheck = jwt({
+    secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: "https://keegankelly.auth0.com/.well-known/jwks.json"
+    }),
+    audience: 'https://kimkellydogs.com',
+    issuer: "https://keegankelly.auth0.com/",
+    algorithms: ['RS256']
+  });
 
 //App controllers
 // const admin_controller = require("./src/admin/admin_controller")
@@ -38,6 +53,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get('*', function (request, response){
   response.sendFile('public/index.html', { root: __dirname })
 })
+
+//auth0 controller
+app.use(jwtCheck);
+
+app.get('/authorized', function (req, res) {
+  res.send('Secured Resource');
+});
 
 app.listen(PORT, function(){
   console.log("App listening on PORT: " + PORT);
