@@ -35,16 +35,16 @@ app.use("/client", client_controller)
 // app.use("/testimonial", testimonial_controller)
 
 //Database config
-mongoose.connect(/*NEED TO ADD REMOTE ENV HERE*/ "mongodb://localhost/kimkellydogs_db");
-const db = mongoose.connection;
-
-db.on("error", function(err){
-  console.log("There was a Mongoose error: ", err)
-});
-
-db.once("open", function(){
-  console.log("Mongoose connection successful.")
-});
+// mongoose.connect(/*NEED TO ADD REMOTE ENV HERE*/ "mongodb://localhost/kimkellydogs_db");
+// const db = mongoose.connection;
+//
+// db.on("error", function(err){
+//   console.log("There was a Mongoose error: ", err)
+// });
+//
+// db.once("open", function(){
+//   console.log("Mongoose connection successful.")
+// });
 
 //Serve static content from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
