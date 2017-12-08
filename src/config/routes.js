@@ -1,5 +1,5 @@
 import React from "react"
-import { Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import Auth from "../utils/Auth"
 import history from "../history"
 
@@ -19,11 +19,20 @@ const handleAuthentication = (nextState, replace) => {
 const Routes = () =>(
 <Switch>
   <Route exact path="/" component={Home} />
-  <Route path="/admin" component={Admin} />
+
+  <Route path="/admin" render={(props) =>
+     (!auth.isAuthenticated() ? (
+       auth.login()
+     ) : (
+       <Admin auth={auth} {...props} />
+     )
+   )}/>
+
   <Route path="/callback" render={(props) => {
     handleAuthentication(props);
     return <Callback {...props} />
   }}/>
+
 </Switch>
 )
 

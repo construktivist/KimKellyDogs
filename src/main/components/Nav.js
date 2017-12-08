@@ -20,13 +20,16 @@ export default class Nav extends React.Component {
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
               <li className="active">
-                <NavLink to="/">ONE</NavLink>
+                <NavLink to="/services">ONE</NavLink>
               </li>
               <li>
-                <NavLink to="/Admin">TWO</NavLink>
+                <NavLink to="/about">TWO</NavLink>
               </li>
               <li>
-                <NavLink to="#">THREE</NavLink>
+                <NavLink to="/testimonials">THREE</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">THREE</NavLink>
               </li>
             </ul>
           </div>
