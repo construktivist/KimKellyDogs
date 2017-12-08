@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
-
+import Nav from "./Nav.js"
 
 export default class Main extends React.Component {
 
   render() {
     return (
       <div className="container">
+      <Nav />
         {/* <nav className="navbar navbar-default">
         <div className="navbar-header">
           <Link className="navbar-brand" to="/">Main</Link>
