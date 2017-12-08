@@ -3,9 +3,10 @@ import { Router, Route, Switch } from 'react-router-dom'
 import Auth from "../utils/Auth"
 import history from "../history"
 
-import Main from "../main/components/Main"
+import Home from "../main/components/Home"
 import Callback from "../main/components/Callback"
 import Admin from "../admin/components/Admin"
+import Nav from "../main/components/Nav"
 
 const auth = new Auth();
 
@@ -15,15 +16,22 @@ const handleAuthentication = (nextState, replace) => {
   }
 }
 
+const Routes = () =>(
+<Switch>
+  <Route exact path="/" component={Home} />
+  <Route path="/admin" component={Admin} />
+  <Route path="/callback" render={(props) => {
+    handleAuthentication(props);
+    return <Callback {...props} />
+  }}/>
+</Switch>
+)
+
 const App = () =>(
-  <Switch>
-    <Route exact path="/" component={Main} />
-    <Route path="/admin" component={Admin} />
-    <Route path="/callback" render={(props) => {
-      handleAuthentication(props);
-      return <Callback {...props} />
-    }}/>
-  </Switch>
+  <div>
+    <Nav />
+    <Routes />
+  </div>
 )
 
 

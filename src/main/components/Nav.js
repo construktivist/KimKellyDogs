@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 
 export default class Nav extends React.Component {
@@ -20,13 +20,13 @@ export default class Nav extends React.Component {
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
               <li className="active">
-                <a href="#">ONE</a>
+                <NavLink to="/">ONE</NavLink>
               </li>
               <li>
-                <a href="#">TWO</a>
+                <NavLink to="/Admin">TWO</NavLink>
               </li>
               <li>
-                <a href="#">THREE</a>
+                <NavLink to="#">THREE</NavLink>
               </li>
             </ul>
           </div>
