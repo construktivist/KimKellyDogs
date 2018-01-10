@@ -6,6 +6,7 @@ import history from "../history"
 import Home from "../main/components/Home"
 import Callback from "../main/components/Callback"
 import Admin from "../admin/components/Admin"
+import ManageClient from "../admin/components/ManageClient"
 import Nav from "../main/components/Nav"
 
 const auth = new Auth();
@@ -20,7 +21,7 @@ const Routes = () =>(
 <Switch>
   <Route exact path="/" component={Home} />
 
-  <Route path="/admin" render={(props) =>
+  <Route exact path="/admin" render={(props) =>
      (!auth.isAuthenticated() ? (
        auth.login()
      ) : (
@@ -28,16 +29,16 @@ const Routes = () =>(
      )
    )}/>
 
-  <Route path="/callback" render={(props) => {
-    handleAuthentication(props);
-    return <Callback {...props} />
-  }}/>
+   <Route path="/callback" render={(props) => {
+      handleAuthentication(props);
+      return <Callback {...props} />
+    }}/>
 
 </Switch>
 )
 
 const App = () =>(
-  <div>
+  <div className="container">
     <Nav />
     <Routes />
   </div>
