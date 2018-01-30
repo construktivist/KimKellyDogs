@@ -13,11 +13,9 @@ export default class Admin extends React.Component {
 
 
   render() {
-    console.log("Match is " + this.props.match.url)
 
     return (
       <div>
-        <Route path={`${this.props.match.url}/manage-client`} component={ManageClient}/>
         <h2>Admin</h2>
           <ul className="nav nav-pills">
             <li className="nav-item">
@@ -33,6 +31,7 @@ export default class Admin extends React.Component {
               <a className="nav-link disabled" href="#">Add a Testimonial</a>
             </li>
           </ul>
+          <Route path={`${this.props.match.url}/manage-client`} component={ManageClient}/>
       </div>
     );
   }
