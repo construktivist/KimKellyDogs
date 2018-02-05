@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const jwt = require("express-jwt");
+const jwtAuthz = require("express-jwt-authz");
 const jwks = require("jwks-rsa");
 
 //auth0 jwtCheck
@@ -18,7 +19,6 @@ const jwtCheck = jwt({
   });
 
 //App controllers
-// const admin_controller = require("./src/admin/admin_controller")
 const client_controller = require("./src/client/client_controller")
 // const testimonial_controller = require("./src/testimonial/testimonial_controller")
 
@@ -30,8 +30,7 @@ const PORT = process.env.PORT || 3000;
 app.set("views", path.join(__dirname, "views"));
 
 //Route controllers
-// app.use("/admin", admin_controller)
-app.use("/client", client_controller)
+app.use("/client", jwtCheck, client_controller)
 // app.use("/testimonial", testimonial_controller)
 
 //Database config
