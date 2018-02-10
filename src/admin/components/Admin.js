@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import Auth from "../../utils/Auth.js"
-import ManageClient from "./ManageClient"
+import ManageClient from "../../client/components/ManageClient"
 
 export default class Admin extends React.Component {
   constructor(props) {
