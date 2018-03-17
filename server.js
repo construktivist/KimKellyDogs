@@ -16,7 +16,7 @@ const jwtCheck = jwt({
     audience: 'https://kimkellydogs.com',
     issuer: "https://keegankelly.auth0.com/",
     algorithms: ['RS256']
-  });
+});
 
 //App controllers
 const client_controller = require("./src/client/client_controller")

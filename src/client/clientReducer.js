@@ -1,13 +1,10 @@
 export default function reducer(state={
-  clients: "John",
+  clients: []
 }, action){
-
   switch (action.type){
-      case "UPDATE_NAME_JACK":
-        return {...state, clients: "Jack"}
-      case "UPDATE_NAME_JIM":
-          return {...state, clients: "JIM"}
-      default:
-        return state;
+    case "FETCH_ALL_CLIENTS":
+      return {...state, clients:action.payload}
+    default:
+      return state;
   }
 }
