@@ -1,8 +1,8 @@
-import axios from "axios"
+import { fetchClient } from "../utils/helpers.js"
 
 export function fetchAllClients(){
   return{
     type: "FETCH_ALL_CLIENTS",
-    payload: axios.get("/client/all")
+    payload: fetchClient()
   }
 }

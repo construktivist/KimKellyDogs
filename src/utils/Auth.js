@@ -7,7 +7,7 @@ export default class Auth {
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
-    audience: `https://${AUTH_CONFIG.domain}/userinfo`,
+    audience: "https://kimkellydogs.com",
     responseType: 'token id_token',
     scope: 'admin:all'
   });
@@ -17,6 +17,7 @@ export default class Auth {
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
+    this.getAccessToken = this.getAccessToken.bind(this);
   }
 
   login() {
@@ -44,6 +45,14 @@ export default class Auth {
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the Admin route
     history.replace('/admin');
+  }
+
+  getAccessToken() {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('No access token found');
+    }
+    return accessToken;
   }
 
   logout() {

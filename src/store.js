@@ -1,6 +1,7 @@
 import { applyMiddleware, createStore } from "redux"
 
 import { fetchAllClients } from "./client/clientActions.js"
+import { getAccessToken } from "./utils/Auth.js";
 
 import { createLogger } from "redux-logger"
 import thunk from "redux-thunk"
@@ -14,11 +15,11 @@ const middleware = applyMiddleware(promise(), thunk, createLogger())
 
 const store = createStore(reducer, middleware)
 
-store.subscribe(() => {
-  console.log("Store updated: ", store.getState())
-})
+// store.subscribe(() => {
+//   console.log("Store updated: ", store.getState())
+// })
 
-store.dispatch(fetchAllClients())
+// store.dispatch(fetchAllClients())
 
 // import { createStore } from "redux";
 //

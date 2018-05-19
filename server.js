@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const bodyParser = require("body-parser")
+const cors = require("cors");
 const jwt = require("express-jwt");
 const jwtAuthz = require("express-jwt-authz");
 const jwks = require("jwks-rsa");
@@ -25,6 +27,10 @@ const client_controller = require("./src/client/client_controller")
 //Server config
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 //View Engine Setup
 app.set("views", path.join(__dirname, "views"));
