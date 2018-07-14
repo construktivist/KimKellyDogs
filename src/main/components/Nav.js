@@ -22,35 +22,31 @@ export default class Nav extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
           <nav className="navbar navbar-default" role="navigation">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="#">Brand</a>
+              <Link to="/">
+                <img alt="Kim Kelly Dog Training Logo" src="./assets/images/kim_kelly_logo.png" />
+              </Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-                <li className="active">
-                  <Link to="/services">ONE</Link>
+                <li>
+                  <Link to="/services">Services</Link>
                 </li>
                 <li>
-                  <Link to="/about">TWO</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/testimonials">THREE</Link>
+                  <Link to="/testimonials">Testimonials</Link>
                 </li>
                 <li>
-                  <Link to="/contact">FOUR</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
           </nav>
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route path="/services" component={Service}/>
           <Route path="/about" component={About}/>
           <Route path="/testimonials" component={Testimonial}/>
