@@ -8,12 +8,12 @@ import Nav from "./main/components/Nav.js"
 import store from "./store"
 
 ReactDOM.render(
+<Router history={history}>
    <Provider store={store}>
-      <Router history={history}>
          <div className="container">
-           <Route path="/" component={Nav}/>
+           <Nav />
          </div>
-      </Router>
-   </Provider>,
+   </Provider>
+</Router>,
    document.getElementById("app")
 );

@@ -1,13 +1,7 @@
-const path = require('path');
-const DIST_DIR = path.resolve(__dirname, "./src/app.js")
-const DIST_SRC = path.resolve(__dirname, "public")
-
 module.exports = {
-	entry: DIST_DIR,
+	entry: "./src/app.js",
 	output: {
-		path: DIST_SRC,
-		filename: 'bundle.js',
-		publicPath: "/"
+		filename: 'public/bundle.js',
 	},
 	module: {
 		loaders: [

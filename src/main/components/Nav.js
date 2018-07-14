@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Link } from "react-router-dom"
 import Auth from "../../utils/Auth"
 
+import Home from "./Home.js"
 import Service from "../../service/components/Service.js"
 import About from "../../about/components/About.js"
 import Testimonial from "../../testimonial/components/Testimonial.js"
@@ -49,6 +50,7 @@ export default class Nav extends React.Component {
               </ul>
             </div>
           </nav>
+          <Route path="/" component={Home}/>
           <Route path="/services" component={Service}/>
           <Route path="/about" component={About}/>
           <Route path="/testimonials" component={Testimonial}/>

@@ -1,8 +1,18 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import axios from "axios"
-import Auth from "../../utils/Auth.js"
-import ManageClient from "../../client/components/ManageClient"
+import Client from "../../client/components/Client"
+import { connect } from "react-redux"
+import { fetchAllClients } from "../../client/clientActions"
+
+@connect((store) => {
+  return{
+    clients: store.client.clients,
+    clientFetching: store.client.fetching,
+    clientFetched: store.client.fetched,
+    clientError: store.client.error,
+  }
+})
 
 export default class Admin extends React.Component {
   constructor(props) {
@@ -10,18 +20,12 @@ export default class Admin extends React.Component {
 
     this.state = {
       match: this.props.match,
-      clients: [],
     };
 
-    this.getClients = this.getClients.bind(this)
   };
 
-  getClients() {
-    const { getAccessToken } = this.props.auth;
-    const headers = { 'Authorization': `Bearer ${getAccessToken()}`}
-    axios.get("client/all", { headers })
-      .then(response => console.log(response))
-      .catch(error => this.setState({ clients: error.clients }));
+  componentWillMount() {
+    this.props.dispatch(fetchAllClients())
   }
 
 
@@ -32,10 +36,10 @@ export default class Admin extends React.Component {
         <h2>Admin</h2>
           <ul className="nav nav-pills">
             <li className="nav-item">
-              <Link to={`${this.props.match.url}/manage-client`}>Manage Client</Link>
+              <Link to={`${this.props.match.url}/clients`}>Clients</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Manage Testimonials</a>
+              <a className="nav-link" href="#">Testimonials</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Add a Client</a>
@@ -45,11 +49,9 @@ export default class Admin extends React.Component {
             </li>
           </ul>
 
-          <button type="button" className="btn btn-primary" onClick={this.getClients}>Clients</button>
+          <Client />
 
-          <p>{console.log(this.state.clients)}</p>
-
-          <Route path={`${this.props.match.url}/manage-client`} component={ManageClient}/>
+          <Route exact path={`${this.props.match.url}/clients`} component={Client}/>
       </div>
     );
   }

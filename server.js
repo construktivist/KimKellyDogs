@@ -52,7 +52,7 @@ db.once("open", function(){
 });
 
 //Serve static content from the "public" directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 //Initial Route for react-router browserHistory
 app.get('*', function (request, response){
