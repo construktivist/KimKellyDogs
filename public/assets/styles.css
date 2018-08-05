@@ -6,10 +6,6 @@ body{
   height: 100%;
 }
 
-div{
-  height: 100%;
-}
-
 .container{
   height: 100%;
 }
@@ -58,6 +54,17 @@ img.bg {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+.footer {
+    position: fixed;
+    height: 30px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #F69226;
+    color: white;
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {

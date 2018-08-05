@@ -1,17 +1,14 @@
 import React from "react"
 import Background from "./Background.js"
+import Footer from "./Footer.js"
 
-export default class Main extends React.Component {
+export default class Home extends React.Component {
 
   render() {
     return (
       <div>
         <Background />
-        <div className="header">
-          <h1>Home</h1>
-        </div>
-        <div className="home-container">
-        </div>
+        <Footer />
       </div>
 
     );
